@@ -28,9 +28,9 @@ function App() {
       <img
         src={gifone}
         alt=""
-        className="absolute -left-[2px] md:left-[38%] mt-[452%] md:mt-[47%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
+        className="absolute -left-[2px] md:left-[38%] mt-[442%] md:mt-[47%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
       />
-      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[35%] mt-[464%] md:mt-[48%] rounded-4xl ' src={gif} alt="" />
+      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[35%] mt-[454%] md:mt-[48%] rounded-4xl ' src={gif} alt="" />
       <img 
        src={TW}
        alt="" 

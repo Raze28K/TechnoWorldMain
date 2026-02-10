@@ -44,7 +44,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-screen  p-8">
+    <div className="flex ml-10 flex-col md:items-center h-screen  p-8">
       <div className="flex flex-col items-center">
         <div className="group flex space-x-8 relative">
           
