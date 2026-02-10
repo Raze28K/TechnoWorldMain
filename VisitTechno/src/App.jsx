@@ -45,7 +45,7 @@ function App() {
 
       {/* ЗАГОЛОВОК */}
       <h1 className="absolute top-[6%] left-[45%] md:left-[49%] -translate-x-1/2 text-white text-5xl font-bold z-50">
-        Услуги
+        Услуги F
       </h1>
 
       {/* КАРТОЧКИ */}
