@@ -50,7 +50,7 @@ function Header() {
           
           <button
             className={`text-1xl md:text-2xl font-semibold transition-transform duration-200 hover:scale-110 ${
-              active === "why" ? "text-blue-700" : "text-white"
+              active === "why" ? "text-white" : "text-white"
             }`}
             onClick={handleWhyClick}
           >
@@ -59,7 +59,7 @@ function Header() {
 
           <button
             className={`text-1xl md:text-2xl font-semibold transition-transform duration-200 hover:scale-110 ${
-              active === "services" ? "text-blue-700" : "text-white"
+              active === "services" ? "text-white" : "text-white"
             }`}
             onClick={() => setActive("services")}
           >
@@ -68,7 +68,7 @@ function Header() {
 
           <button
             className={`text-1xl md:text-2xl font-semibold transition-transform duration-200   hover:scale-110 ${
-              active === "location" ? "text-blue-700" : "text-white"
+              active === "location" ? "text-white" : "text-white"
             }`}
             onClick={handlePlaceClick}
           >

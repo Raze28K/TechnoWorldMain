@@ -17,7 +17,8 @@ function Card({ title, desc, img, img1, price }) {
       onMouseMove={handleMouseMove}
       className="
         group relative w-80 h-96 rounded-2xl
-        bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950
+        bg-gradient-to-br from-zinc-950 via-red-950/40 to-white/5
+        
         transform transition-transform duration-500
         md:hover:scale-105
         shadow-xl md:hover:shadow-2xl
@@ -37,7 +38,7 @@ function Card({ title, desc, img, img1, price }) {
           background: `
             radial-gradient(
               400px circle at var(--x) var(--y),
-              rgba(45, 37, 179),
+              rgba(143, 10, 0),
               transparent 60%
             )
           `,
@@ -54,7 +55,7 @@ function Card({ title, desc, img, img1, price }) {
       {/* НИЖНЯЯ ПОЛОСА */}
       <span
         className="
-          absolute bottom-0 left-0 w-0 h-1 bg-blue-800
+          absolute bottom-0 left-0 w-0 h-1 bg-red-800
           transition-all duration-500
           md:group-hover:w-full
         "

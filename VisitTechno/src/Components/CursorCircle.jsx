@@ -19,7 +19,7 @@ export default function CursorCircle() {
         fixed
         w-22 h-22
         rounded-full
-        bg-blue-500/40
+        bg-red-700/40
         blur-2xl
         transition-transform duration-300 ease-out
       "
