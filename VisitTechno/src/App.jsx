@@ -3,6 +3,7 @@ import Card from './Components/Card'
 import CursorCircle from "./Components/CursorCircle";
 import Moon from "./Components/Moon";
 import StarField from "./Components/Starfield";
+import { use, useState } from 'react';
 
 
 import computerImg from './Pictures/computer.png'
@@ -11,9 +12,11 @@ import computerImg3 from './Pictures/remont.png'
 import gifone from "./Pictures/cir.png";
 import TW from "./Pictures/T&W.png";
 import gif from "./gifs/gif1.gif"
+import Modal from './Components/ModalWindow';
 
 
 function App() {
+  const [TF, setTF] = useState(false);
   return (
     
     <div className="relative overflow-x-hidden min-h-screen bg-black p-6">
@@ -40,6 +43,10 @@ function App() {
       {/* HEADER */}
       
       <Header /> 
+      <Modal TF={TF} setTF={setTF} />
+      
+      
+      <button className='bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[20%] -top-[43%] md:left-[50%] md:top-[359px] hover:scale-120 duration-180' onClick={() => setTF(true)}>Оставить заказ</button>
       
       
 
@@ -81,7 +88,7 @@ function App() {
           price="20.000₸"
         />
         <button onClick={() => {window.open("https://wa.me/77024007227", "_blank")}}
-        className="bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[20%] -top-[43%] md:left-[36%] md:top-[16%] hover:scale-120 duration-180">
+        className="bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[20%] -top-[43%] md:left-[22%] md:top-[16%] hover:scale-120 duration-180">
           Связаться с нами
         </button>
         <h2 className="md:mt-130 mt-630 text-center text-2xl italic text-white/70 absolute md:left-[24%] left-[1%] hover:text-white duration-500">
@@ -152,6 +159,7 @@ function App() {
           Будем рады видеть вас в нашем сервисе!
         </h2>
       </div>
+      
       
 
     </div>
