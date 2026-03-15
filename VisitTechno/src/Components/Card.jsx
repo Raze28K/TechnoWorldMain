@@ -1,4 +1,16 @@
-function Card({ title, desc, img, img1, price }) {
+import { use } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import closeIcon from "../Pictures/icon_close.png";
+
+function Card({ title, desc, img, img1,price,desc2,btn }) {
+
+  const [editTitle, setEditTitle] = useState(title)
+  const [editDesc, setEditDesc] = useState(desc)
+ 
+  const [TF,setTF] = useState(false)
+  const [TF2,setTF2] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const handleMouseMove = (e) => {
     // отключаем подсветку на мобиле
@@ -11,23 +23,38 @@ function Card({ title, desc, img, img1, price }) {
     e.currentTarget.style.setProperty("--x", `${x}px`)
     e.currentTarget.style.setProperty("--y", `${y}px`)
   }
+  // const timer = setTimeout(() => setVisible(false), 1000);
+  // return () => clearTimeout(timer);
+  useEffect(() => {
+    if (TF2) {
+      setVisible(false); // сначала скрываем
+      const timer = setTimeout(() => {
+        setVisible(true); // через 1 сек показываем
+      }, 500);
+
+      return () => clearTimeout(timer);
+    } else {
+      setVisible(false);
+    }
+  }, [TF2]);
 
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="
-        group relative w-80 h-96 rounded-2xl
-        bg-gradient-to-br from-zinc-950 via-red-950/40 to-white/5
-        
-        transform transition-transform duration-500
-        md:hover:scale-105
-        shadow-xl md:hover:shadow-2xl
-        flex flex-col items-center p-6
-        overflow-hidden
-      "
+      className={`
+          group relative w-80 h-96 rounded-2xl
+          bg-gradient-to-br from-zinc-950 via-red-950/40 to-white/5
+          transform transition-transform duration-500
+          
+          shadow-xl 
+          flex flex-col items-center p-6
+          overflow-hidden
+          ${TF2 ? "" : "md:hover:scale-105 md:hover:shadow-2xl"}
+          
+        `}
     >
 
-      {/* ПОДСВЕТКА БОРДЕРА — ТОЛЬКО ДЕСКТОП */}
+      {/* ПОДСВЕТКА БОРДЕРА */}
       <div
         className="
           pointer-events-none absolute inset-0 rounded-2xl
@@ -64,7 +91,6 @@ function Card({ title, desc, img, img1, price }) {
       {/* КАРТИНКА / EMOJI */}
       <div className="relative flex justify-center items-center h-40 w-full">
 
-        {/* EMOJI — ТОЛЬКО ДЕСКТОП */}
         <h1
           className="
             absolute text-7xl text-white
@@ -76,7 +102,6 @@ function Card({ title, desc, img, img1, price }) {
           {img1}
         </h1>
 
-        {/* КАРТИНКА */}
         <img
           src={img}
           alt=""
@@ -91,11 +116,65 @@ function Card({ title, desc, img, img1, price }) {
 
       {/* ТЕКСТ */}
       <div className="w-full mt-auto flex flex-col items-center">
+
         <hr className="border-white/40 my-2 w-full" />
-        <h1 className="text-white text-2xl font-bold">{title}</h1>
-        <h3 className="text-white text-sm text-center mt-1">{desc}</h3>
-        <h2 className="text-white text-2xl text-center mt-2">{price}</h2>
+
+        {/* РЕДАКТИРУЕМЫЙ TITLE */}
+        <input
+          value={editTitle}
+          onChange={(e) => setEditTitle(e.target.value)}
+          className="
+            text-white text-2xl font-bold
+            text-center
+            bg-transparent
+            outline-none
+            w-full
+            z-1000000
+          "
+        />
+
+        {/* РЕДАКТИРУЕМЫЙ DESC */}
+        <textarea
+          value={editDesc}
+          onChange={(e) => setEditDesc(e.target.value)}
+          className="
+            text-white text-sm text-center mt-1
+            bg-transparent
+            outline-none
+            resize-none
+            w-full
+            z-1000000
+          "
+        />
+
+        <button
+          className="bg-red-600/80 rounded-2xl p-1 mt-5 hover:scale-110 duration-200"
+          onClick={() => {
+         
+            if (desc2) setTF2(true); // если есть компонент — открыть
+          }}
+        >
+          Подробнее
+        </button>
+
       </div>
+      {TF2 && desc2 && (
+        <div
+          className={`fixed inset-0 z-[100000000] flex items-center justify-center bg-black/60 duration-50 ${visible ? "opacity-100" : "opacity-0"}`}
+          onClick={() => setTF2(false)} // клик в любом месте закрывает
+        >
+          <div
+            className="pointer-events-auto duration-500 "
+            onClick={(e) => e.stopPropagation()} // клики **только внутри** не закрывают
+          >
+            <button onClick={() => setTF2(false)} className="text-2xl scale-300 z-100000000  text-black  to-white/10 p-2 rounded-3xl -mt-2 ml-95 fixed">
+              <img src={closeIcon} className="w-[5px] h-[5px] rounded-3xl " />
+            </button>
+            {desc2}
+          </div>
+        </div>
+      )}
+     
     </div>
   )
 }
