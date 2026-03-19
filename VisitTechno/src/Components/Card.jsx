@@ -196,7 +196,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             className="pointer-events-auto duration-500 "
             onClick={(e) => e.stopPropagation()} // клики **только внутри** не закрывают
           >
-            <button onClick={() => setTF2(false)} className="text-2xl scale-250 z-100000000  text-black border-1 border-white  to-white/10 p-1 rounded-3xl mt-1 ml-95 fixed">
+            <button onClick={() => setTF2(false)} className="text-2xl scale-250 z-100000000  text-black border-1 border-white  to-white/10 p-1 rounded-3xl mt-1 ml-65 md:ml-95 fixed">
               <img src={closeIcon} className="w-[5px] h-[5px] rounded-3xl " />
             </button>
             {desc2}

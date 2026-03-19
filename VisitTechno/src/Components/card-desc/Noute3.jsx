@@ -102,7 +102,8 @@ function Noute_desc() {
       group relative
       bg-[#1e1f22]/95
       text-white
-      w-[420px]
+      md:w-[420px]
+      w-[300px]
       -mt-5
       p-6
       rounded-2xl
@@ -137,7 +138,7 @@ function Noute_desc() {
         }}
       />
 
-      <h1 className="text-3xl font-semibold mb-4 text-red-600 ml-25">
+      <h1 className="text-3xl font-semibold mb-4 text-red-600 flex justify-center">
         Прайс-лист
       </h1>
 
