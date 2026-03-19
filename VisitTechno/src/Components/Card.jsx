@@ -1,14 +1,17 @@
-import { use } from "react";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import closeIcon from "../Pictures/icon_close.png";
+
+const PASS = "MasterкомAa$admin505";
 
 function Card({ title, desc, img, img1,price,desc2,btn }) {
 
   const [editTitle, setEditTitle] = useState(title)
   const [editDesc, setEditDesc] = useState(desc)
+  const [admin, setAdmin] = useState(true);
  
-  const [TF,setTF] = useState(false)
+  
   const [TF2,setTF2] = useState(false)
   const [visible, setVisible] = useState(false);
 
@@ -23,6 +26,26 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
     e.currentTarget.style.setProperty("--x", `${x}px`)
     e.currentTarget.style.setProperty("--y", `${y}px`)
   }
+ 
+  useEffect(() => {
+      
+      const handleKeyDown = (e) => {
+        
+        if (e.altKey && e.shiftKey && e.key.toLowerCase() === "d") {
+  
+          let value = prompt("Введите пароль!");
+  
+          if (value === PASS) {
+            setAdmin(false);
+          }
+  
+        }
+      };
+  
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+  
+  }, []);
   // const timer = setTimeout(() => setVisible(false), 1000);
   // return () => clearTimeout(timer);
   useEffect(() => {
@@ -122,7 +145,12 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
         {/* РЕДАКТИРУЕМЫЙ TITLE */}
         <input
           value={editTitle}
-          onChange={(e) => setEditTitle(e.target.value)}
+          readOnly={admin}
+          onChange={(e) => {
+            
+            setEditTitle(e.target.value)
+
+          }} 
           className="
             text-white text-2xl font-bold
             text-center
@@ -136,6 +164,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
         {/* РЕДАКТИРУЕМЫЙ DESC */}
         <textarea
           value={editDesc}
+          readOnly={admin}
           onChange={(e) => setEditDesc(e.target.value)}
           className="
             text-white text-sm text-center mt-1
@@ -148,7 +177,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
         />
 
         <button
-          className="bg-red-600/80 rounded-2xl p-1 mt-5 hover:scale-110 duration-200"
+          className="bg-red-600/80 rounded-2xl p-1 mt-5 hover:scale-110 duration-200 text-white text-xl"
           onClick={() => {
          
             if (desc2) setTF2(true); // если есть компонент — открыть
@@ -167,7 +196,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             className="pointer-events-auto duration-500 "
             onClick={(e) => e.stopPropagation()} // клики **только внутри** не закрывают
           >
-            <button onClick={() => setTF2(false)} className="text-2xl scale-300 z-100000000  text-black  to-white/10 p-2 rounded-3xl -mt-2 ml-95 fixed">
+            <button onClick={() => setTF2(false)} className="text-2xl scale-250 z-100000000  text-black border-1 border-white  to-white/10 p-1 rounded-3xl mt-1 ml-95 fixed">
               <img src={closeIcon} className="w-[5px] h-[5px] rounded-3xl " />
             </button>
             {desc2}

@@ -1,12 +1,13 @@
 import closee from "../../Pictures/icon_close.png"
 import { useState, useEffect } from "react";
+import open from "../../Pictures/cil-code.png"
 
 const PASS = "MasterкомAa$admin505";
 
 function Noute_desc() {
 
   const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem("noute_items");
+    const saved = localStorage.getItem("noute_items_1");
     return saved ? JSON.parse(saved) : [
       "Замена матрицы 5.000",
       "Замена матрицы (вклейка) 10.000",
@@ -20,6 +21,7 @@ function Noute_desc() {
       "Замена разъёмов (питание,USB,HDMI и т.д) от 10.000",
       "Ремонт монитора 7.000",
       "Мелкий ремонт от 5.000",
+      
     ];
   });
 
@@ -46,7 +48,7 @@ function Noute_desc() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("noute_items", JSON.stringify(items));
+    localStorage.setItem("noute_items_1", JSON.stringify(items));
   }, [items]);
 
   const handleChange = (index, value) => {
@@ -58,13 +60,19 @@ function Noute_desc() {
   };
 
   const HandleAdd = () => {
-    setFrameTF(true)
+    if (!inputValue.trim()){
+      alert("Нельзя сохранить пустую услугу!")
+    }
+    else{
+      setFrameTF(true)
 
-    const newItems = [...items, inputValue];
-    setItems(newItems)
+      const newItems = [...items, inputValue];
+      setItems(newItems)
 
-    localStorage.setItem("noute_items", JSON.stringify(newItems));
-    setInputValue("")
+      localStorage.setItem("noute_items_1", JSON.stringify(newItems));
+      setInputValue("")
+    }
+    
   };
 
   const removeItem = (indexToRemove) => {
@@ -73,11 +81,13 @@ function Noute_desc() {
 
     setItems(updatedItems);
 
-    localStorage.setItem("noute_items", JSON.stringify(updatedItems));
+    localStorage.setItem("noute_items_1", JSON.stringify(updatedItems));
 
   };
 
   // ПОДСВЕТКА БОРДЕРА
+  
+
   const handleMouseMove = (e) => {
 
     if (window.innerWidth < 768) return
@@ -150,7 +160,9 @@ function Noute_desc() {
           className="ml-15 mt-5 border-2 rounded-2xl p-2 border-gray-500"
           type="text"
           placeholder="Название услуги.."
+          
         />
+        
 
         <button
           onClick={HandleAdd}
@@ -170,76 +182,76 @@ function Noute_desc() {
 
       <button
         onClick={() => setFrameTF(false)}
-        className={`-mt-10 fixed ${admin ? "opacity-0":"opacity-100"} `}
+        className={`-mt-15 scale-130 border-2 border-white rounded-2xl p-1 fixed ${admin ? "opacity-0":"opacity-100"} `}
       >
-        Плюс
+        <img src={open} alt="" />
       </button>
 
       <ul className="space-y-1">
 
         {items.map((item, index) => (
 
-          <li
-            key={index}
-            className="flex items-start gap-1"
-          >
+          <li key={index} className="flex items-start gap-1 relative">
 
-            <span className="text-white/90 text-sm w-[16px]">
-              {index + 1}.
-            </span>
+          <span className="text-white/90 text-sm w-[16px]">
+            {index + 1}.
+          </span>
 
+          {/* Обертка textarea + символ */}
+          <div className="relative w-full">
             <textarea
               rows={1}
               readOnly={admin}
-              value={item}
+              value={item.endsWith("₸") ? item : item + " ₸"} // всегда добавляем ₸ в конце
               onChange={(e) => {
-
                 if (!admin) {
+                  let text = e.target.value;
 
-                  handleChange(index, e.target.value);
+                  // убираем символ ₸ если пользователь удалил/редактировал
+                  if (text.endsWith("₸") === false) {
+                    text = text.replace(/₸/g, "") + " ₸";
+                  }
+
+                  handleChange(index, text);
 
                   e.target.style.height = "auto";
                   e.target.style.height = e.target.scrollHeight + "px";
-
                 }
-
               }}
-
               ref={(el) => {
-
                 if (el) {
-
                   el.style.height = "auto";
                   el.style.height = el.scrollHeight + "px";
-
                 }
-
               }}
-
               className="
-              w-full
-              bg-transparent
-              text-white
-              text-sm
-              resize-none
-              outline-none
-              border-none
-              p-[2px]
-              m-0
-              overflow-hidden
-              leading-tight
+                w-full
+                bg-transparent
+                text-white
+                text-sm
+                resize-none
+                outline-none
+                border-none
+                p-[2px]
+                m-0
+                overflow-hidden
+                leading-tight
               "
-
             />
+            
+            
+          </div>
 
+          {!admin && (
             <button
-              className={`mt-1 ${admin ? "opacity-0":"opacity-100"}`}
+              className="mt-1 ml-2"
               onClick={() => removeItem(index)}
             >
-              <img src={closee}/>
+              <img src={closee} />
             </button>
+          )}
 
-          </li>
+        </li>
 
         ))}
 

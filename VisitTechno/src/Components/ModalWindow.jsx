@@ -47,7 +47,7 @@ function Modal({TF,setTF}){
             <div className="bg-[#1e1f22] text-white w-[420px] p-8 rounded-2xl shadow-2xl border border-white/10">
 
                 <h1 className="text-2xl font-bold mb-6 text-center">
-                    Обратная связь
+                    Оставить заказ
                 </h1>
 
                 <div className="flex flex-col gap-4">

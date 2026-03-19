@@ -15,6 +15,7 @@ import gif from "./gifs/gif1.gif"
 import Modal from './Components/ModalWindow';
 import Noute_desc from './Components/card-desc/Noute'
 import Noute_desc2 from './Components/card-desc/Noute2'
+import Noute_desc3 from './Components/card-desc/Noute3';
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
       <img 
        src={TW}
        alt="" 
-       className='absolute -scale-45 md:scale-35 rounded-4xl -top-[10px] md:-top-[80px]  -left-10 md:-left-50'
+       className='absolute -scale-45 md:scale-35 rounded-4xl -top-[10px] md:-top-[80px] shadow-[0_0_10px_rgba(255,0,0,1),0_0_20px_rgba(255,0,0,0.8),0_0_30px_rgba(255,0,0,0.6),0_0_40px_rgba(255,0,0,0.4)] -left-10 md:-left-50'
        />
 
       {/* HEADER */}
@@ -92,6 +93,7 @@ function App() {
           img1="🪛"
           title="Разное.."
           desc="От сборки компьютера,до установки windows "
+          desc2={<Noute_desc3/>}
          
           
         />

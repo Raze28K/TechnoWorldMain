@@ -7,20 +7,12 @@ const PASS = "MasterкомAa$admin505";
 function Noute_desc() {
 
   const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem("noute_items2");
+    const saved = localStorage.getItem("noute_items3");
     return saved ? JSON.parse(saved) : [
-      "Замена матрицы 5.000",
-      "Замена матрицы (вклейка) 10.000",
-      "Восстановление корпуса от 10.000",
-      "Замена петель от 10.000",
-      "Замена SSD (без переноса информации с установкой windows и софта) 12.000",
-      "Замена SSD (с переносом информации с установкой windows и софта) 20.000",
-      "Чистка ПК от 5.000",
-      "Чистка Видеокарты от 10.000",
-      "Замена комплектующих 5.000",
-      "Замена разъёмов (питание,USB,HDMI и т.д) от 10.000",
-      "Ремонт монитора 7.000",
-      "Мелкий ремонт от 5.000",
+      "Установка Windows + Soft 12.000",
+      "Установка стороннего софта (AutoCAD,Corel и т.д) от 10.000",
+      "Сборка компьютера 7.000",
+      "Восстановление информации от 25.000"
       
     ];
   });
@@ -48,7 +40,7 @@ function Noute_desc() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("noute_items2", JSON.stringify(items));
+    localStorage.setItem("noute_items3", JSON.stringify(items));
   }, [items]);
 
   const handleChange = (index, value) => {
@@ -69,7 +61,7 @@ function Noute_desc() {
       const newItems = [...items, inputValue];
       setItems(newItems)
 
-      localStorage.setItem("noute_items2", JSON.stringify(newItems));
+      localStorage.setItem("noute_items3", JSON.stringify(newItems));
       setInputValue("")
     }
     
@@ -81,7 +73,7 @@ function Noute_desc() {
 
     setItems(updatedItems);
 
-    localStorage.setItem("noute_items2", JSON.stringify(updatedItems));
+    localStorage.setItem("noute_items3", JSON.stringify(updatedItems));
 
   };
 
