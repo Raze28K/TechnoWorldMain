@@ -40,7 +40,7 @@ function App() {
       <img 
        src={TW}
        alt="" 
-       className='absolute scale-30 md:scale-35 rounded-4xl -top-[55px] md:-top-[80px] shadow-[0_0_10px_rgba(255,0,0,1),0_0_20px_rgba(255,0,0,0.8),0_0_30px_rgba(255,0,0,0.6),0_0_40px_rgba(255,0,0,0.4)] -left-1 md:-left-50'
+       className='absolute scale-30 md:scale-35 rounded-4xl -top-[58px] md:-top-[80px] shadow-[0_0_10px_rgba(255,0,0,1),0_0_20px_rgba(255,0,0,0.8),0_0_30px_rgba(255,0,0,0.6),0_0_40px_rgba(255,0,0,0.4)] -left-1 md:-left-50'
        />
 
       {/* HEADER */}
@@ -98,7 +98,7 @@ function App() {
           
         />
         <button onClick={() => {window.open("https://wa.me/77024007227", "_blank")}}
-        className="bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[18%] -top-[42%]   md:left-[55%] md:top-[16%] hover:scale-120 duration-180">
+        className="bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[20%] -top-[42%]   md:left-[55%] md:top-[16%] hover:scale-120 duration-180">
           Связаться с нами
         </button>
         <h2 className="md:mt-130 mt-630 text-center text-2xl italic text-white/70 absolute md:left-[25%] left-[1%] hover:text-white duration-500">
@@ -158,21 +158,21 @@ function App() {
           Адрес
         </h1>
         <p className="text-white/85 absolute top-[100%]  md:top-[68%] left-[12px] md:left-[10%] text-1xl md:text-2xl  z-50">
-          Улица Тимирязева, 42 к15/6
-          Бостандыкский район, Алматы, 050057
+          Улица Тимирязева <br /> 42 к15/6 <br />
+          Бостандыкский район,<br /> Алматы, 050057
         </p>
 
-        <h1 className="text-red-600/85 absolute top-[98%] md:top-[72%] left-[61%] md:left-[10%] text-3xl md:text-5xl z-50">
+        <h1 className="text-red-600/85 absolute top-[98%] md:top-[73%] left-[61%] md:left-[10%] text-3xl md:text-5xl z-50">
           График
         </h1>
-        <p className="text-white/85 absolute top-[100%] md:top-[75%] left-[58%] md:left-[10%] text-1xl md:text-2xl z-50">
+        <p className="text-white/85 absolute top-[100%] md:top-[76%] left-[58%] md:left-[10%] text-1xl md:text-2xl z-50">
           9:00–22:00 UTC+5
         </p>
-        <h2 className="text-white absolute top-[129%] md:top-[80%] left-[7%] text-3xl md:text-4xl hover:text-red-700 duration-600 z-50">
+        <h2 className="text-white absolute top-[126%] md:top-[80%] left-[7%] text-3xl md:text-4xl hover:text-red-700 duration-600 z-50">
           Будем рады видеть вас в нашем сервисе!
         </h2>
-        <h1 className='text-red-600  absolute top-[100%] md:top-[95%] left-[58%] md:left-[40%] md:text-7xl text-1xl md:text-2xl z-50'>Master</h1>
-        <h1 className='text-white/85 absolute top-[100%] md:top-[95%] left-[58%] md:left-[53%] md:text-7xl text-1xl md:text-2xl z-50'>ком</h1>
+        <h1 className='text-red-600  absolute top-[129%] md:top-[95%] left-[30%] md:left-[40%] md:text-7xl text-3xl md:text-2xl z-50'>Master</h1>
+        <h1 className='text-white/85 absolute top-[129%] md:top-[95%] left-[56%] md:left-[53%] md:text-7xl text-3xl md:text-2xl z-50'>ком</h1>
       </div>
       
       
