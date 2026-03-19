@@ -3,7 +3,7 @@ export default function Moon() {
   const isNight = hour >= 20 || hour < 6;
   if (!isNight) return null;
   return (
-    <div className="pointer-events-none fixed top-6 md:top-10 right-5 md:right-10 w-20 md:w-40 h-20 md:h-40">
+    <div className="opacity-0 md:opacity-100 pointer-events-none fixed top-6 md:top-10 right-5 md:right-10 w-20 md:w-40 h-20 md:h-40">
       {/* Полумесяц */}
       <div
         className="

@@ -44,12 +44,12 @@ function Header() {
   }, []);
 
   return (
-    <div className="flex ml-10 flex-col md:items-center h-screen  p-8">
+    <div className="flex ml-10 flex-col md:items-center h-screen mt-10 md:mt-0  p-8">
       <div className="flex flex-col items-center">
         <div className="group flex space-x-8 relative">
           
           <button
-            className={`text-1xl md:text-2xl font-semibold transition-transform duration-200 hover:scale-110 ${
+            className={`md:text-2xl font-semibold whitespace-nowrap transition-transform duration-200 hover:scale-110 ${
               active === "why" ? "text-white" : "text-white"
             }`}
             onClick={handleWhyClick}

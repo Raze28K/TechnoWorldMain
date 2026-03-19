@@ -34,13 +34,13 @@ function App() {
       <img
         src={gifone}
         alt=""
-        className="absolute -left-[2px] md:left-[38%] mt-[442%] md:mt-[53%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
+        className="absolute -left-[2px] md:left-[38%] mt-[495%] md:mt-[53%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
       />
-      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[674px] mt-[454%] md:mt-[54%] rounded-4xl shadow-[0_0_60px_rgba(239,68,68,0.6)] ' src={gif} alt="" />
+      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[674px] mt-[505%] md:mt-[54%] rounded-4xl shadow-[0_0_60px_rgba(239,68,68,0.6)] ' src={gif} alt="" />
       <img 
        src={TW}
        alt="" 
-       className='absolute scale-30 md:scale-35 rounded-4xl -top-[58px] md:-top-[80px] shadow-[0_0_10px_rgba(255,0,0,1),0_0_20px_rgba(255,0,0,0.8),0_0_30px_rgba(255,0,0,0.6),0_0_40px_rgba(255,0,0,0.4)] -left-1 md:-left-50'
+       className='absolute scale-30 md:scale-35 rounded-4xl -top-[45px] md:-top-[80px] shadow-[0_0_10px_rgba(255,0,0,1),0_0_20px_rgba(255,0,0,0.8),0_0_30px_rgba(255,0,0,0.6),0_0_40px_rgba(255,0,0,0.4)] -left-1 md:-left-50'
        />
 
       {/* HEADER */}
@@ -49,12 +49,12 @@ function App() {
       <Modal TF={TF} setTF={setTF} />
       
       
-      <button className='bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[24%] -top-[12%] md:left-[33%] md:top-[359px] hover:scale-120 duration-180' onClick={() => setTF(true)}>Оставить заказ</button>
+      <button className='bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[24%] -top-[10%]  md:left-[33%] md:top-[310px] hover:scale-120 duration-180' onClick={() => setTF(true)}>Оставить заказ</button>
       
       
 
       {/* ЗАГОЛОВОК */}
-      <h1 className="absolute md:top-[6%] top-30  left-[48%] md:left-[49%] -translate-x-1/2 text-white md:text-5xl text-3xl font-bold z-50">
+      <h1 className="absolute md:top-[6%] top-37  left-[48%] md:left-[49%] -translate-x-1/2 text-white md:text-5xl text-3xl font-bold z-50">
         Услуги 
       </h1>
 
@@ -63,7 +63,8 @@ function App() {
             flex flex-col items-center gap-6
             md:flex-row md:gap-10
             absolute
-            top-[12%]
+            top-[14%]
+            md:top-[10%]
             left-47 -translate-x-1/2
             md:left-[22%] md:-translate-x-0
             z-50
@@ -109,24 +110,24 @@ function App() {
       <div className='mt-30'>
           <h1
           id="target"
-          className="scale-170 md:scale-100 absolute top-[64%] md:top-[37%] left-[49%] -translate-x-1/2 text-white text-1xl  md:text-5xl font-bold z-0">
+          className="scale-170 md:scale-100 absolute top-[66%] md:top-[37%] left-[49%] -translate-x-1/2 text-white text-1xl  md:text-5xl font-bold z-0">
           Почему выбирают нас
         </h1>
 
         <div className="shadow-inner pl-80 pt-20 z-50 relative">
           
           <ul className="list-disc list-inside text-white text-4xl space-y-2">
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[1000%] md:-top-[70%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[1100%] md:-top-[70%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Быстрая работа
             </li>
             
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[820%] md:top-[350%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[910%] md:top-[350%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Качественная работа
             </li>
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-115 p-1 absolute -left-[77px] md:left-[20%] top-[880%] md:-top-[50%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-115 p-1 absolute -left-[77px] md:left-[20%] top-[970%] md:-top-[50%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Удобное расположение
             </li>
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-125 p-1 absolute top-[940%] -left-[85px] md:top-[390%] md:left-[20%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-125 p-1 absolute top-[1035%] -left-[85px] md:top-[390%] md:left-[20%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Ремонт любого масштаба
             </li>
           </ul>
