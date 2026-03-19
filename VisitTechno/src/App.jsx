@@ -49,7 +49,7 @@ function App() {
       <Modal TF={TF} setTF={setTF} />
       
       
-      <button className='bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[24%] top-400  md:left-[33%] md:top-[310px] hover:scale-120 duration-180' onClick={() => setTF(true)}>Оставить заказ</button>
+      <button className='bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[24%] top-410  md:left-[33%] md:top-[310px] hover:scale-120 duration-180' onClick={() => setTF(true)}>Оставить заказ</button>
       
       
 
