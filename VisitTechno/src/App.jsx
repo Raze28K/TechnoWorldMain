@@ -34,9 +34,9 @@ function App() {
       <img
         src={gifone}
         alt=""
-        className="absolute -left-[2px] md:left-[38%] mt-[495%] md:mt-[53%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
+        className="absolute -left-[2px] md:left-[38%] mt-[460%] md:mt-[53%] -scale-80 md:scale-130 animate-spin [animation-duration:30s] z-0 o pointer-events-none"
       />
-      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[674px] mt-[505%] md:mt-[54%] rounded-4xl shadow-[0_0_60px_rgba(239,68,68,0.6)] ' src={gif} alt="" />
+      <img className='md:scale-69 scale-46 absolute -left-1 md:left-[674px] mt-[470%] md:mt-[54%] rounded-4xl shadow-[0_0_60px_rgba(239,68,68,0.6)] ' src={gif} alt="" />
       <img 
        src={TW}
        alt="" 
@@ -110,24 +110,24 @@ function App() {
       <div className='mt-30'>
           <h1
           id="target"
-          className="scale-170 md:scale-100 absolute top-[66%] md:top-[37%] left-[49%] -translate-x-1/2 text-white text-1xl  md:text-5xl font-bold z-0">
+          className="scale-170 md:scale-100 absolute top-[60%] md:top-[37%] left-[49%] -translate-x-1/2 text-white text-1xl  md:text-5xl font-bold z-0">
           Почему выбирают нас
         </h1>
 
         <div className="shadow-inner pl-80 pt-20 z-50 relative">
           
           <ul className="list-disc list-inside text-white text-4xl space-y-2">
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[1100%] md:-top-[70%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[895%] md:-top-[70%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Быстрая работа
             </li>
             
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[910%] md:top-[350%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[700%] md:top-[350%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Качественная работа
             </li>
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-115 p-1 absolute -left-[77px] md:left-[20%] top-[970%] md:-top-[50%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-115 p-1 absolute -left-[77px] md:left-[20%] top-[765%] md:-top-[50%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Удобное расположение
             </li>
-            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-125 p-1 absolute top-[1035%] -left-[85px] md:top-[390%] md:left-[20%] rounded-2xl hover:scale-108 duration-180 opacity-90">
+            <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5 w-125 p-1 absolute top-[830%] -left-[85px] md:top-[390%] md:left-[20%] rounded-2xl hover:scale-108 duration-180 opacity-90">
               Ремонт любого масштаба
             </li>
           </ul>
