@@ -2,10 +2,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import closeIcon from "../Pictures/icon_close.png";
+import Noute_desc from "./card-desc/Noute"
+import React from "react";
 
 const PASS = "MasterкомAa$admin505";
 
-function Card({ title, desc, img, img1,price,desc2,btn }) {
+function Card({ title, desc, img, img1,price,desc2 ,btn }) {
 
   const [editTitle, setEditTitle] = useState(title)
   const [editDesc, setEditDesc] = useState(desc)
@@ -14,6 +16,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
   
   const [TF2,setTF2] = useState(false)
   const [visible, setVisible] = useState(false);
+  const global = TF2
 
   const handleMouseMove = (e) => {
     // отключаем подсветку на мобиле
@@ -74,6 +77,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
           overflow-hidden
           ${TF2 ? "" : "md:hover:scale-105 md:hover:shadow-2xl"}
           
+          
         `}
     >
 
@@ -112,7 +116,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
       />
 
       {/* КАРТИНКА / EMOJI */}
-      <div className="relative flex justify-center items-center h-40 w-full">
+      <div className="relative flex justify-center items-center h-40 w-full pointer-events-none">
 
         <h1
           className="
@@ -133,6 +137,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             opacity-100 md:opacity-0
             md:group-hover:opacity-100
             transition-opacity
+            pointer-events-none
           "
         />
       </div>
@@ -158,6 +163,7 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             outline-none
             w-full
             z-1000000
+           
           "
         />
 
@@ -173,19 +179,20 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             resize-none
             w-full
             z-1000000
+            
           "
+          
         />
 
         <button
-          className="bg-red-600/80 rounded-2xl p-1 mt-5 hover:scale-110 duration-200 text-white text-xl"
+          className="relative z-[99999] bg-red-600/80 rounded-2xl p-1 mt-5 md:hover:scale-110 md:duration-200 text-white text-xl  "
           onClick={() => {
-         
-            if (desc2) setTF2(true); // если есть компонент — открыть
+            console.log("CLICK");
+            if (desc2) setTF2(true);
           }}
         >
-          Подробнее
+        Подробнее
         </button>
-
       </div>
       {TF2 && desc2 && (
         <div
@@ -196,10 +203,9 @@ function Card({ title, desc, img, img1,price,desc2,btn }) {
             className="pointer-events-auto duration-500 "
             onClick={(e) => e.stopPropagation()} // клики **только внутри** не закрывают
           >
-            <button onClick={() => setTF2(false)} className="text-2xl scale-250 z-100000000  text-black border-1 border-white  to-white/10 p-1 rounded-3xl mt-1 ml-65 md:ml-95 fixed">
-              <img src={closeIcon} className="w-[5px] h-[5px] rounded-3xl " />
-            </button>
-            {desc2}
+            
+            {React.cloneElement(desc2, { TF2, setTF2 })}
+            
           </div>
         </div>
       )}

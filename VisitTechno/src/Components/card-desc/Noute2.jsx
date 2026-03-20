@@ -4,7 +4,7 @@ import open from "../../Pictures/cil-code.png"
 
 const PASS = "MasterкомAa$admin505";
 
-function Noute_desc() {
+function Noute_desc({ TF2, setTF2 }) {
 
   const [items, setItems] = useState(() => {
     const saved = localStorage.getItem("noute_items2");
@@ -118,6 +118,7 @@ function Noute_desc() {
       shadow-xl
       z-[100000]
       overflow-hidden
+      
       "
     >
 
@@ -149,6 +150,9 @@ function Noute_desc() {
       <h1 className="text-3xl font-semibold mb-4 text-red-600 flex justify-center">
         Прайс-лист
       </h1>
+      <button onClick={() => setTF2(false)} className="text-2xl scale-250 z-100000000  text-black border-1 border-white  to-white/10 p-1 rounded-3xl -mt-13 ml-60 md:ml-90 fixed">
+                          <img src={closee} className="w-[5px] h-[5px] rounded-3xl " />
+      </button>
 
       <div className={`bg-[#1e1f22] w-80 h-40 fixed -mt-70 ml-4 rounded-2xl ${(!frameTF && !admin) ? "opacity-100" : "opacity-0"} `}>
 

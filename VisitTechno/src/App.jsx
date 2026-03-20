@@ -114,7 +114,7 @@ function App() {
           Почему выбирают нас
         </h1>
 
-        <div className="shadow-inner pl-80 pt-20 z-50 relative">
+        <div className="shadow-inner pl-80 pt-20 z-50 relative pointer-events-none">
           
           <ul className="list-disc list-inside text-white text-4xl space-y-2">
             <li className="scale-65 md:scale-100 bg-gradient-to-br from-zinc-950 via-red-950/80 to-white/5  w-105 md:w-105 p-1 absolute -left-[70px] md:left-[55%] top-[895%] md:-top-[70%] rounded-2xl hover:scale-108 duration-180 opacity-90">
