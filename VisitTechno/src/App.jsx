@@ -102,7 +102,7 @@ function App() {
         className="bg-gradient-to-br from-black via-red-950/40 to-white/10 shadow-lg shadow-red-500/50 md:w-60 md:h-15 w-46 h-12 rounded-4xl text-white text-xl p-1 mt-110 absolute left-[20%] top-380 md:left-[55%] md:top-[16%] hover:scale-120 duration-180">
           Связаться с нами
         </button>
-        <h2 className="md:mt-130 mt-630 text-center text-2xl italic text-white/70 absolute md:left-[25%] left-[1%] hover:text-white duration-500">
+        <h2 className="opacity-0 md:opacity-100 md:mt-130 mt-630 text-center text-2xl italic text-white/70 absolute md:left-[25%] left-[1%] hover:text-white duration-500">
           Мы не продаём услуги — мы решаем задачи.
         </h2>
         
